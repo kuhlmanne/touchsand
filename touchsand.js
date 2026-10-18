@@ -1,4 +1,4 @@
-// Lays the projects out as beach towels. The data is catalog-data.js, which only ever holds public projects.
+// Lays the projects out as beach towels, and the sunset pictures as polaroids. The data is projects.js.
 (function () {
   'use strict';
   var STATUS = { playable: 'Playable', beta: 'Beta', open: 'Open build', workshop: 'In the workshop', soon: 'Coming soon' };
@@ -48,6 +48,25 @@
     var burst = document.getElementById('burst');
     burst.textContent = items.length + (items.length === 1 ? ' project' : ' projects') + ' on the shore!';
     burst.hidden = false;
+  }
+
+  // Sunset pictures, only when there are any. Paths must stay inside sunset/.
+  var shots = Array.isArray(window.SUNSETS) ? window.SUNSETS.filter(function (s) { return /^sunset\/[\w.-]+\.(jpe?g|png|webp)$/i.test(s.src || ''); }) : [];
+  if (shots.length) {
+    var wall = document.getElementById('polaroids');
+    shots.forEach(function (s, n) {
+      var fig = el('figure', 'polaroid');
+      var img = el('img');
+      img.src = s.src;
+      img.alt = s.alt || 'Sunset at the beach';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      fig.appendChild(img);
+      if (s.caption) fig.appendChild(el('figcaption', null, s.caption));
+      fig.style.setProperty('--tilt', (n % 2 ? 1 : -1) * (0.6 + (n % 3) * 0.5) + 'deg');
+      wall.appendChild(fig);
+    });
+    document.getElementById('sunsets').hidden = false;
   }
 
   // A little celebration on arrival, skipped for anyone who asked for less motion.

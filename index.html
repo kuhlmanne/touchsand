@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TouchSand: every project, fresh off the beach</title>
-<meta name="description" content="TouchSand is the beach party for everything Kuhltura has made. Pick a towel and dig in.">
+<title>TouchSand: projects from the beach</title>
+<meta name="description" content="TouchSand is the beach party for every project the crew posted. Pick a towel and dig in.">
 <meta name="theme-color" content="#2ec4b6">
 <meta property="og:title" content="TouchSand">
-<meta property="og:description" content="Every project, fresh off the beach. Pick a towel and dig in.">
+<meta property="og:description" content="Every project from the beach, fresh off the sand. Pick a towel and dig in.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://touchsand.kuhltura.net/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
@@ -20,16 +20,21 @@
 
 <header class="hero">
   <div class="sun" aria-hidden="true"></div>
-  <p class="kicker">Kuhltura presents</p>
+  <p class="kicker">Built on the beach</p>
   <h1>Touch<span>Sand</span></h1>
-  <p class="sub">Every project, fresh off the beach.</p>
+  <p class="sub">Every project from the beach, fresh off the sand.</p>
   <p class="burst" id="burst" hidden></p>
 </header>
 
 <main class="shore">
   <h2 class="shelf">Pick a towel</h2>
   <div class="grid" id="grid"></div>
-  <noscript><p class="empty">TouchSand needs JavaScript to lay out the towels. Everything is at <a href="https://kuhltura.net">kuhltura.net</a>.</p></noscript>
+  <noscript><p class="empty">TouchSand needs JavaScript to lay out the towels and the sunset pictures.</p></noscript>
+
+  <section id="sunsets" hidden>
+    <h2 class="shelf">Sunset on the sand</h2>
+    <div class="polaroids" id="polaroids"></div>
+  </section>
 </main>
 
 <div class="surf" aria-hidden="true">
@@ -38,11 +43,11 @@
 </div>
 
 <footer class="foot">
-  <p class="made">Made by hand and by crew. <a href="https://kuhltura.net">kuhltura.net</a></p>
+  <p class="made">Made on the beach, by hand and by crew.</p>
   <p class="powered">Powered by OpenBase</p>
 </footer>
 
-<script src="catalog-data.js"></script>
+<script src="projects.js"></script>
 <script src="touchsand.js"></script>
 </body>
 </html>

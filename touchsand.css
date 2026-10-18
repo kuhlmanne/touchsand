@@ -87,6 +87,14 @@ a.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink);
 .btn.off { background: var(--sand-deep); color: var(--ink); box-shadow: none; border-style: dashed; }
 .empty { text-align: center; font-style: italic; }
 
+/* sunset polaroids */
+#sunsets[hidden] { display: none; }
+.polaroids { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 30px 24px; padding: 6px 4px 10px; }
+.polaroid { margin: 0; padding: 12px 12px 10px; background: #fff; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); transform: rotate(var(--tilt, 0deg)); transition: transform 0.15s; }
+.polaroid:hover { transform: rotate(0) translateY(-6px); }
+.polaroid img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: linear-gradient(#ffb199, #ffd47a); border: 2px solid var(--ink); }
+.polaroid figcaption { padding-top: 8px; font-style: italic; text-align: center; font-size: 0.95rem; }
+
 /* surf and footer */
 .surf { position: relative; height: 110px; margin-top: 10px; }
 .wave { position: absolute; left: 0; width: 200%; height: 100%; animation: roll 14s linear infinite; }
@@ -105,7 +113,7 @@ a.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink);
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .towel:nth-child(odd), .towel:nth-child(even) { transform: none; }
+  .towel:nth-child(odd), .towel:nth-child(even), .polaroid { transform: none; }
 }
 @media (max-width: 520px) {
   .towel:nth-child(odd), .towel:nth-child(even) { transform: none; }
