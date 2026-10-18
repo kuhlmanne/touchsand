@@ -66,4 +66,6 @@ window.CATALOG = [
 ];
 
 /* Sunset pictures from the beach, newest last. Files live in sunset/. Leave empty to hide the section. */
-window.SUNSETS = [];
+window.SUNSETS = [
+  { src: 'sunset/sunset-1.jpg', alt: 'The sun touching the sea at the beach, the sky streaked orange and blue', caption: 'The sun goes down on a good day.' }
+];
