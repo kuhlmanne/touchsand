@@ -1,7 +1,7 @@
 // Lays the projects out as beach towels, and the sunset pictures as polaroids. The data is projects.js.
 (function () {
   'use strict';
-  var STATUS = { playable: 'Playable', beta: 'Beta', open: 'Open build', workshop: 'In the workshop', soon: 'Coming soon' };
+  var STATUS = { playable: 'Playable', beach: 'Built on the beach', honorable: 'Honorable mention?', soon: 'Coming soon' };
   var TOWELS = ['coral', 'sea', 'sun', 'palm', 'dusk'];
   var items = Array.isArray(window.CATALOG) ? window.CATALOG : [];
 
@@ -19,7 +19,7 @@
 
   function towel(it, i) {
     var href = link(it);
-    var status = href || it.status === 'soon' ? it.status : 'soon';
+    var status = STATUS[it.status] ? it.status : 'soon';
     var card = el('article', 'towel towel-' + TOWELS[i % TOWELS.length]);
     card.appendChild(el('span', 'ribbon', STATUS[status] || STATUS.soon));
     var art = el('div', 'art', (it.art && it.art.icon) || '🏖️');
@@ -35,7 +35,7 @@
       a.setAttribute('aria-label', 'Dig in: ' + (it.title || 'project'));
       card.appendChild(a);
     } else {
-      card.appendChild(el('span', 'btn off', 'Washing ashore soon'));
+      card.appendChild(el('span', 'btn off', 'Link washing ashore soon'));
     }
     return card;
   }
